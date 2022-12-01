@@ -22,7 +22,6 @@ import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "../../styles/Navbar.css";
 import "../../styles/Search.css";
-import HomePage from "../../pages/HomePage";
 import { useProducts } from "../../contexts/ProductContextProvider";
 
 const pages = [
@@ -104,7 +103,7 @@ function ResponsiveAppBar() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: "none" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <img
@@ -183,7 +182,7 @@ function ResponsiveAppBar() {
                 color: "inherit",
                 textDecoration: "none",
               }}>
-              CORSA™
+              APARAT™
             </Typography>
             <Box
               className="nav-icons"
