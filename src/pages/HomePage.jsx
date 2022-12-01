@@ -6,17 +6,20 @@ import "../styles/HomePage.js";
 const HomePage = () => {
   return (
     <div>
+      <div className="home_box"></div>
+
       <h2 id="home-text">
-        Turn your living room into
+        Buy your dream
         <div class="mask">
           <span data-show className="firstSpan">
-            a theater.
+            iPhone.
           </span>
-          <span>a gym.</span>
-          <span>a movie.</span>
-          <span>an arcade.</span>
+          <span>Samsung.</span>
+          <span>Huawei.</span>
+          <span>Now.</span>
         </div>
       </h2>
+
       <Footer />
     </div>
   );

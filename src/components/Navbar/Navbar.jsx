@@ -103,8 +103,8 @@ function ResponsiveAppBar() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar position="static" style={{ background: "none" }}>
-        <Container maxWidth="xl">
+      <AppBar id="navbar" position="static" style={{ background: "none" }}>
+        <Container maxWidth="xl" className="navbar_1">
           <Toolbar disableGutters>
             <img
               className="logo"

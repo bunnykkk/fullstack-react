@@ -10,7 +10,6 @@ setInterval(function () {
 
   show.removeAttribute("data-show");
   show.setAttribute("data-up", "");
-  console.log("111");
 
   next.setAttribute("data-show", "");
-}, 2000);
+}, 3000);
