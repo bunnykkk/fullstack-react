@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 :root {
   --offset: 6px;
 }

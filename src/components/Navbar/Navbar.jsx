@@ -111,7 +111,7 @@ function ResponsiveAppBar() {
               className="logo"
               sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
               class="logo"
-              src="https://cdn-icons-png.flaticon.com/512/3460/3460051.png"
+              src="https://cdn-icons-png.flaticon.com/512/6065/6065574.png"
             />
             <Typography
               variant="h6"
@@ -127,7 +127,7 @@ function ResponsiveAppBar() {
                 color: "inherit",
                 textDecoration: "none",
               }}>
-              CORSA™
+              APARAT™
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
