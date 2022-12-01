@@ -22,6 +22,8 @@ import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "../../styles/Navbar.css";
 import "../../styles/Search.css";
+import HomePage from "../../pages/HomePage";
+import { useProducts } from "../../contexts/ProductContextProvider";
 
 const pages = [
   {
@@ -54,6 +56,7 @@ const darkTheme = createTheme({
 });
 
 function ResponsiveAppBar() {
+  const { searchInp, setSearchInp } = useProducts();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -211,12 +214,14 @@ function ResponsiveAppBar() {
               </IconButton>
             </Box>
             <div style={{ marginLeft: "auto", display: "flex" }}>
-              <input
-                type="text"
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                placeholder="Search..."
-              />
+              {searchInp ? (
+                <input
+                  type="text"
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                  placeholder="Search..."
+                />
+              ) : null}
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Account">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

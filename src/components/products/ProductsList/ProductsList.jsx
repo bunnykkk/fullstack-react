@@ -5,6 +5,11 @@ import Pagination from "@mui/material/Pagination";
 
 const ProductsList = ({ page, setPage, changeSideBarStatus }) => {
   const { products, getProducts } = useProducts();
+  const { searchInp, setSearchInp } = useProducts();
+
+  useEffect(() => {
+    setSearchInp(true);
+  }, []);
 
   useEffect(() => {
     getProducts();
