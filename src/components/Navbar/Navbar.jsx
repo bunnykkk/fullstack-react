@@ -183,7 +183,7 @@ function ResponsiveAppBar() {
                 color: "inherit",
                 textDecoration: "none",
               }}>
-              CORSA™
+              APARAT™
             </Typography>
             <Box
               className="nav-icons"
