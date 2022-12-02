@@ -12,22 +12,22 @@ const Footer = () => {
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
+            <a class="menu__link" href="/about">
               About
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
+            <a class="menu__link" href="/services">
               Services
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
+            <a class="menu__link" href="/team">
               Team
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
+            <a class="menu__link" href="/contact">
               Contact
             </a>
           </li>
