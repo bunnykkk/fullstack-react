@@ -10,7 +10,7 @@ const HomePage = () => {
 
       <h2 id="home-text">
         Buy your dream
-        <div class="mask">
+        <div className="mask">
           <span data-show className="firstSpan">
             iPhone.
           </span>

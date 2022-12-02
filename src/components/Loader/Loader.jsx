@@ -5,7 +5,7 @@ const Loader = () => {
   return (
     <div>
       <svg
-        class="pl"
+        className="pl"
         viewBox="0 0 64 64"
         width="64px"
         height="64px"
@@ -20,7 +20,7 @@ const Loader = () => {
           </mask>
         </defs>
         <circle
-          class="pl__ring"
+          className="pl__ring"
           cx="32"
           cy="32"
           r="26"
@@ -34,14 +34,14 @@ const Loader = () => {
         />
         <g fill="hsl(223,90%,55%)">
           <circle
-            class="pl__ball1"
+            className="pl__ball1"
             cx="32"
             cy="45"
             r="6"
             transform="rotate(14)"
           />
           <circle
-            class="pl__ball2"
+            className="pl__ball2"
             cx="32"
             cy="48"
             r="3"
@@ -50,7 +50,7 @@ const Loader = () => {
         </g>
         <g mask="url(#grad-mask)">
           <circle
-            class="pl__ring"
+            className="pl__ring"
             cx="32"
             cy="32"
             r="26"
@@ -64,14 +64,14 @@ const Loader = () => {
           />
           <g fill="hsl(283,90%,55%)">
             <circle
-              class="pl__ball1"
+              className="pl__ball1"
               cx="32"
               cy="45"
               r="6"
               transform="rotate(14)"
             />
             <circle
-              class="pl__ball2"
+              className="pl__ball2"
               cx="32"
               cy="48"
               r="3"

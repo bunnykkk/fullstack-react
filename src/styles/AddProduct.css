@@ -1,0 +1,45 @@
+.adminBlock {
+  background-color: rgba(245, 245, 245, 0.664);
+  width: 20vmax;
+  height: 25vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  border-radius: 35px;
+  /* opacity: 40%; */
+}
+
+.adminInput {
+  background-color: rgb(233, 233, 233);
+  border-radius: 2vmax;
+  border: 0;
+  width: 8.4vmax;
+  height: 2vmax;
+  transition: 1s;
+  padding-left: 20px;
+  box-shadow: 0px 0px 10px rgb(77, 77, 77);
+}
+
+.adminInput:hover {
+  border: 2px;
+  border-color: black;
+  transition: 1s;
+  transform: scale(1.1);
+  box-shadow: 0px 10px 10px grey;
+}
+
+.btnAdminSave {
+  width: 7vmax;
+  height: 2vmax;
+  border-radius: 25px;
+  border: 0;
+  margin-bottom: 1vmax;
+}
+
+.btnAdminSave:hover {
+  background-color: rgb(211, 211, 211);
+  border: 7px;
+  outline-style: solid;
+}
