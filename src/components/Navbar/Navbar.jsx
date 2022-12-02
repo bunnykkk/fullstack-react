@@ -215,6 +215,8 @@ function ResponsiveAppBar() {
             <div style={{ marginLeft: "auto", display: "flex" }}>
               {searchInp ? (
                 <input
+                  className="adminInput"
+                  style={{ marginRight: "270px" }}
                   type="text"
                   value={search}
                   onChange={e => setSearch(e.target.value)}

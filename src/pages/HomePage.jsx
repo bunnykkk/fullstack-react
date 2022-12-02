@@ -15,7 +15,7 @@ const HomePage = () => {
             iPhone.
           </span>
           <span>Samsung.</span>
-          <span>Huawei.</span>
+          <span>Xiaomi.</span>
           <span>Now.</span>
         </div>
       </h2>

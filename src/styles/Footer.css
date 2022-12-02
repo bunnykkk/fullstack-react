@@ -1,9 +1,12 @@
 .footer {
+  margin-bottom: -200px;
+  margin-left: 380px;
+  position: absolute;
   margin-top: 200px;
   left: 0;
   bottom: 0;
   width: 100%;
-  background: rgb(25, 25, 25);
+  background: rgba(25, 25, 25, 0);
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
