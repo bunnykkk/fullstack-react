@@ -9,95 +9,38 @@ const API = "http://204.236.250.233";
 
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const config = {
-    headers: { "Content-Type": "multipart/form-data" },
-  };
-
-  const register = async (username, password) => {
-    let formData = new FormData();
-    formData.append("username", username);
-    formData.append("password", password);
-
+  async function register(formData, navigate) {
     try {
-      const res = await axios.post(`${API}register/`, formData, config);
-      console.log(res);
+      let res = await axios.post(`${API}/account/register/`, formData);
       navigate("/login");
-    } catch (error) {
-      console.log(error);
-      setError("Error occured");
+    } catch (err) {
+      console.log(err);
     }
-  };
+  }
 
-  const login = async (username, password) => {
-    let formData = new FormData();
-    formData.append("username", username);
-    formData.append("password", password);
-
+  async function login(formData, navigate, username) {
     try {
-      let res = await axios.post(`${API}api/token/`, formData, config);
+      let res = await axios.post(`${API}/account/login/`, formData);
+      localStorage.setItem("tokens", JSON.stringify(res.data));
+      localStorage.setItem("username", JSON.stringify(username));
       navigate("/");
-      console.log(res.data);
-      localStorage.setItem("token", JSON.stringify(res.data));
-      localStorage.setItem("username", username);
-      setUser(username);
-    } catch (error) {
-      console.log(error);
-      setError("Wrong username or password");
+      console.log(`${username}`);
+    } catch (err) {
+      console.log(err);
+    } finally {
     }
-  };
-
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    setUser("");
-    navigate("/");
-  };
-
-  const checkAuth = async () => {
-    console.log("CHECK TOKEN FUNC WORKED");
-    let token = JSON.parse(localStorage.getItem("token"));
-
-    try {
-      const Authorization = `Bearer ${token.access}`;
-
-      let res = await axios.post(
-        `${API}api/token/refresh/`,
-        { refresh: token.refresh },
-        { headers: { Authorization } }
-      );
-
-      localStorage.setItem(
-        "token",
-        JSON.stringify({
-          refresh: token.refresh,
-          access: res.data.access,
-        })
-      );
-
-      let username = localStorage.getItem("username");
-      setUser(username);
-    } catch (error) {
-      console.log(error);
-      logout();
-    }
-  };
+  }
 
   return (
     <authContext.Provider
       value={{
         user,
-        error,
-        loading,
 
         register,
         login,
-        logout,
-        checkAuth,
       }}>
       {children}
     </authContext.Provider>
