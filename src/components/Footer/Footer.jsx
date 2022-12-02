@@ -4,30 +4,30 @@ import "../../styles/Footer.css";
 const Footer = () => {
   return (
     <>
-      <footer class="footer">
-        <ul class="menu">
-          <li class="menu__item">
-            <a class="menu__link" href="/">
+      <footer className="footer">
+        <ul className="menu">
+          <li className="menu__item">
+            <a className="menu__link" href="/">
               Home
             </a>
           </li>
-          <li class="menu__item">
-            <a class="menu__link" href="/about">
+          <li className="menu__item">
+            <a className="menu__link" href="/about">
               About
             </a>
           </li>
-          <li class="menu__item">
-            <a class="menu__link" href="/services">
+          <li className="menu__item">
+            <a className="menu__link" href="/services">
               Services
             </a>
           </li>
-          <li class="menu__item">
-            <a class="menu__link" href="/team">
+          <li className="menu__item">
+            <a className="menu__link" href="/team">
               Team
             </a>
           </li>
-          <li class="menu__item">
-            <a class="menu__link" href="/contact">
+          <li className="menu__item">
+            <a className="menu__link" href="/contact">
               Contact
             </a>
           </li>
