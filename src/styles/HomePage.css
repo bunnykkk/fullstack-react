@@ -5,9 +5,6 @@ body {
   --offset: 6px;
 }
 
-.navbar_1 {
-  position: absolute;
-}
 #home-text {
   padding-top: 5%;
   margin-left: 10%;
