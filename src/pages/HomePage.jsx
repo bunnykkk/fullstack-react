@@ -19,6 +19,25 @@ const HomePage = () => {
           <span>Now.</span>
         </div>
       </h2>
+      <div>
+        <p>
+          Buy our equipment at the lowest price and with the highest quality on
+          the market
+        </p>
+      </div>
+      <button className="rainb-btn">Start Shopping</button>
+      <div>
+        <ul>
+          <li>1M+</li>
+          <li>5M</li>
+          <li>15%</li>
+        </ul>
+      </div>
+      <div>
+        <p>Users</p>
+        <p>Sales</p>
+        <p>Credit</p>
+      </div>
 
       <Footer />
     </div>
