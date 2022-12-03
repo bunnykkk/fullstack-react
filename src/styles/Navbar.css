@@ -17,6 +17,7 @@
 
 .nav-icons {
   display: flex;
+  align-items: center;
 }
 
 body {
