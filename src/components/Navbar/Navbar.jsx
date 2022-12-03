@@ -256,7 +256,9 @@ function ResponsiveAppBar() {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}>
                   {settings.map((setting) => (
-                    <MenuItem key={setting.type} onClick={handleCloseUserMenu}>
+                    <MenuItem
+                      key={setting.type}
+                      onClick={() => navigate(setting.path)}>
                       <Typography
                         textAlign="center"
                         onClick={() => navigate(setting.path)}>
@@ -264,10 +266,8 @@ function ResponsiveAppBar() {
                       </Typography>
                     </MenuItem>
                   ))}
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center" onClick={logout}>
-                      Logout
-                    </Typography>
+                  <MenuItem onClick={logout}>
+                    <Typography textAlign="center">Logout</Typography>
                   </MenuItem>
                 </Menu>
               </Box>
