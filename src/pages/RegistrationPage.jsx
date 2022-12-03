@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
+import "../styles/RegistrationPage.css";
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState("");
@@ -28,28 +29,43 @@ const RegistrationPage = () => {
 
   return (
     <>
-      <h2>Register User</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        onChange={e => setEmail(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Username"
-        onChange={e => setUsername(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Password"
-        onChange={e => setPassword(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Password Confirm"
-        onChange={e => setPasswordConfirm(e.target.value)}
-      />
-      <button onClick={createUser}>Register</button>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "4vmax",
+        }}>
+        <div className="regBlock">
+          <h2 style={{ color: "white" }}>Register User</h2>
+          <input
+            type="email"
+            placeholder="Email"
+            className="inputReg"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Username"
+            className="inputReg"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Password"
+            className="inputReg"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Password Confirm"
+            className="inputReg"
+            onChange={(e) => setPasswordConfirm(e.target.value)}
+          />
+          <button className="btnReg" onClick={createUser}>
+            Register
+          </button>
+        </div>
+      </div>
     </>
   );
 };
