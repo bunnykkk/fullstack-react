@@ -105,124 +105,135 @@ function ResponsiveAppBar() {
     <ThemeProvider theme={darkTheme}>
       <AppBar id="navbar" position="static" style={{ background: "none" }}>
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <img
-              className="logo"
-              sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
-              class="logo"
-              src="https://cdn-icons-png.flaticon.com/512/6065/6065574.png"
-            />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}>
-              APARAT™
-            </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit">
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
+          <Toolbar
+            disableGutters
+            style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="logoText_Navbar">
+              <img
+                className="logo"
+                sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
+                class="logo"
+                src="https://cdn-icons-png.flaticon.com/512/6065/6065574.png"
+              />
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  mr: 2,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
                 }}>
+                APARAT™
+              </Typography>
+
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit">
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}>
+                  {pages.map((page) => (
+                    <MenuItem key={page.type} onClick={handleCloseNavMenu}>
+                      <Typography
+                        textAlign="center"
+                        onClick={() => navigate(page.path)}>
+                        {page.type}
+                      </Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href=""
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "none" },
+                  flexGrow: 1,
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}>
+                APARAT™
+              </Typography>
+            </div>
+            <div className="blockInfoNavbar">
+              {/* navigate btn start */}
+              <Box
+                className="nav-icons"
+                sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 {pages.map((page) => (
-                  <MenuItem key={page.type} onClick={handleCloseNavMenu}>
-                    <Typography
-                      textAlign="center"
-                      onClick={() => navigate(page.path)}>
-                      {page.type}
-                    </Typography>
-                  </MenuItem>
+                  <Button
+                    key={page.type}
+                    onClick={() => navigate(page.path)}
+                    sx={{ my: 2, color: "white", display: "block" }}>
+                    {page.type}
+                  </Button>
                 ))}
-              </Menu>
-            </Box>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}>
-              APARAT™
-            </Typography>
-            <Box
-              className="nav-icons"
-              sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page.type}
-                  onClick={() => navigate(page.path)}
-                  sx={{ my: 2, color: "white", display: "block" }}>
-                  {page.type}
-                </Button>
-              ))}
-              <IconButton
-                size="large"
-                color="inherit"
-                onClick={() => navigate("/cart")}>
-                <Badge badgeContent={cartLength} color="error">
-                  <ShoppingCartOutlinedIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                size="large"
-                color="inherit"
-                onClick={() => navigate("/favorite")}>
-                <Badge badgeContent={cartLength} color="error">
-                  <BookmarkBorderIcon />
-                </Badge>
-              </IconButton>
-            </Box>
-            <div style={{ marginLeft: "auto", display: "flex" }}>
+                <IconButton
+                  size="large"
+                  color="inherit"
+                  onClick={() => navigate("/cart")}>
+                  <Badge badgeContent={cartLength} color="error">
+                    <ShoppingCartOutlinedIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton
+                  size="large"
+                  color="inherit"
+                  onClick={() => navigate("/favorite")}>
+                  <Badge badgeContent={cartLength} color="error">
+                    <BookmarkBorderIcon />
+                  </Badge>
+                </IconButton>
+              </Box>
+              {/* navigate btn end */}
+
+              {/* search input start */}
               {searchInp ? (
                 <input
-                  className="adminInput"
-                  style={{ marginRight: "270px" }}
+                  className="searchNavbar"
+                  // style={{ marginRight: "270px" }}
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search..."
                 />
               ) : null}
+              {/* seacrh input end */}
+
+              {/* profile start */}
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Account">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -260,6 +271,7 @@ function ResponsiveAppBar() {
                   </MenuItem>
                 </Menu>
               </Box>
+              {/* prodile end */}
             </div>
           </Toolbar>
         </Container>
