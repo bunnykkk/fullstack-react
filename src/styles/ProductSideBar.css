@@ -1,5 +1,26 @@
 .sideBar {
-  background: gray;
-  width: 20%;
+  background: rgb(22, 22, 22);
+  color: white;
+  width: 15vmax;
   height: 90vh;
+  position: absolute;
+  border-top-right-radius: 35px;
 }
+
+.sideBar.true {
+  left: -350px;
+  transition: 1s;
+}
+
+.sideBar.false {
+  left: 0px;
+  transition: 1s;
+}
+/* .sideBar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+} */

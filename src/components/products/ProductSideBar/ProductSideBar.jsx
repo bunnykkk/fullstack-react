@@ -12,10 +12,14 @@ const ProductSideBar = ({ isSideBar, setPage }) => {
   }, []);
 
   return isSideBar ? (
-    <div className="sideBar">
+    <div className="sideBar true">
       <FilterProduct />
     </div>
-  ) : null;
+  ) : (
+    <div className="sideBar false">
+      <FilterProduct />
+    </div>
+  );
 };
 
 export default ProductSideBar;
