@@ -23,6 +23,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "../../styles/Navbar.css";
 import "../../styles/Search.css";
 import { useProducts } from "../../contexts/ProductContextProvider";
+import gradi from "../../components/img/gradi.png";
 
 const pages = [
   {
@@ -59,10 +60,10 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
+  const handleOpenUserMenu = event => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -105,129 +106,127 @@ function ResponsiveAppBar() {
     <ThemeProvider theme={darkTheme}>
       <AppBar id="navbar" position="static" style={{ background: "none" }}>
         <Container maxWidth="xl">
-          <Toolbar
-            disableGutters
-            style={{ display: "flex", justifyContent: "space-between" }}>
-            <div className="logoText_Navbar">
-              <img
-                className="logo"
-                sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
-                class="logo"
-                src="https://cdn-icons-png.flaticon.com/512/6065/6065574.png"
-              />
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                  mr: 2,
-                  display: { xs: "none", md: "flex" },
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                }}>
-                APARAT™
-              </Typography>
+          <Toolbar disableGutters>
+            <img
+              style={{ pointerEvents: "none" }}
+              src={gradi}
+              alt="fadf"
+              className="gradi"
+            />
+            <img
+              className="logo"
+              sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
+              class="logo"
+              src="https://cdn-icons-png.flaticon.com/512/6065/6065574.png"
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}>
+              APARAT™
+            </Typography>
 
-              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-                <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleOpenNavMenu}
-                  color="inherit">
-                  <MenuIcon />
-                </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorElNav}
-                  anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "left",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                  }}
-                  open={Boolean(anchorElNav)}
-                  onClose={handleCloseNavMenu}
-                  sx={{
-                    display: { xs: "block", md: "none" },
-                  }}>
-                  {pages.map((page) => (
-                    <MenuItem key={page.type} onClick={handleCloseNavMenu}>
-                      <Typography
-                        textAlign="center"
-                        onClick={() => navigate(page.path)}>
-                        {page.type}
-                      </Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </Box>
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href=""
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit">
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
                 sx={{
-                  mr: 2,
-                  display: { xs: "flex", md: "none" },
-                  flexGrow: 1,
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
+                  display: { xs: "block", md: "none" },
                 }}>
-                APARAT™
-              </Typography>
-            </div>
-            <div className="blockInfoNavbar">
-              {/* navigate btn start */}
-              <Box
-                className="nav-icons"
-                sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                {pages.map((page) => (
-                  <Button
-                    key={page.type}
-                    onClick={() => navigate(page.path)}
-                    sx={{ my: 2, color: "white", display: "block" }}>
-                    {page.type}
-                  </Button>
+                {pages.map(page => (
+                  <MenuItem key={page.type} onClick={handleCloseNavMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate(page.path)}>
+                      {page.type}
+                    </Typography>
+                  </MenuItem>
                 ))}
-                <IconButton
-                  size="large"
-                  color="inherit"
-                  onClick={() => navigate("/cart")}>
-                  <Badge badgeContent={cartLength} color="error">
-                    <ShoppingCartOutlinedIcon />
-                  </Badge>
-                </IconButton>
-                <IconButton
-                  size="large"
-                  color="inherit"
-                  onClick={() => navigate("/favorite")}>
-                  <Badge badgeContent={cartLength} color="error">
-                    <BookmarkBorderIcon />
-                  </Badge>
-                </IconButton>
-              </Box>
-              {/* navigate btn end */}
-
-              {/* search input start */}
+              </Menu>
+            </Box>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}>
+              APARAT™
+            </Typography>
+            <Box
+              className="nav-icons"
+              sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              {pages.map(page => (
+                <Button
+                  key={page.type}
+                  onClick={() => navigate(page.path)}
+                  sx={{ my: 2, color: "white", display: "block" }}>
+                  {page.type}
+                </Button>
+              ))}
+              <IconButton
+                size="large"
+                color="inherit"
+                onClick={() => navigate("/cart")}>
+                <Badge badgeContent={cartLength} color="error">
+                  <ShoppingCartOutlinedIcon />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size="large"
+                color="inherit"
+                onClick={() => navigate("/favorite")}>
+                <Badge badgeContent={cartLength} color="error">
+                  <BookmarkBorderIcon />
+                </Badge>
+              </IconButton>
+            </Box>
+            <div style={{ marginLeft: "auto", display: "flex" }}>
               {searchInp ? (
                 <input
                   className="searchNavbar"
                   // style={{ marginRight: "270px" }}
                   type="text"
                   value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  onChange={e => setSearch(e.target.value)}
                   placeholder="Search..."
                 />
               ) : null}
@@ -255,10 +254,8 @@ function ResponsiveAppBar() {
                   }}
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}>
-                  {settings.map((setting) => (
-                    <MenuItem
-                      key={setting.type}
-                      onClick={() => navigate(setting.path)}>
+                  {settings.map(setting => (
+                    <MenuItem key={setting.type} onClick={handleCloseUserMenu}>
                       <Typography
                         textAlign="center"
                         onClick={() => navigate(setting.path)}>

@@ -33,7 +33,7 @@ const ProductsList = ({ page, setPage, changeSideBarStatus, isSideBar }) => {
   }
 
   return (
-    <div style={{ color: "white" }}>
+    <div style={{ color: "white" }} className="productList">
       <button className="filterBtn" onClick={changeSideBarStatus}>
         {isSideBar ? <FilterAltOffOutlinedIcon /> : <FilterAltOutlinedIcon />}
       </button>

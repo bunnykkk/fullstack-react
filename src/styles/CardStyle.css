@@ -1,11 +1,12 @@
 .productCard_main-block {
   display: flex;
   flex-direction: row;
-  color: white;
+  color: black;
 }
 
 .productCard_block {
   display: flex;
+  background-color: white;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
@@ -15,12 +16,12 @@
   border-radius: 25px;
   margin-bottom: 2%;
   margin: 5%;
-  border: 2px solid #f1c40f;
+  border: 2px solid violet;
 }
 
 .productCard_img {
-  width: 50%;
-  height: 50%;
+  width: 150px;
+  height: fit-content;
 }
 
 .productCard_buttons {
