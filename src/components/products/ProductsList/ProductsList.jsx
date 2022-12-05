@@ -18,7 +18,7 @@ const ProductsList = ({ page, setPage, changeSideBarStatus, isSideBar }) => {
     getProducts();
   }, []);
 
-  const itemsOnPage = 6;
+  const itemsOnPage = 4;
 
   const count = Math.ceil(products.length / itemsOnPage);
 
@@ -39,7 +39,7 @@ const ProductsList = ({ page, setPage, changeSideBarStatus, isSideBar }) => {
       </button>
 
       {products ? (
-        currentData().map((item) => <ProductCard key={item.id} item={item} />)
+        currentData().map(item => <ProductCard key={item.id} item={item} />)
       ) : (
         <h3>Loading...</h3>
       )}
