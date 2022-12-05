@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import ProductCard from "../ProductCard/ProductCard";
 import Pagination from "@mui/material/Pagination";
+import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
+import FilterAltOffOutlinedIcon from "@mui/icons-material/FilterAltOffOutlined";
+import "../../../styles/Filter.css";
 
-const ProductsList = ({ page, setPage, changeSideBarStatus }) => {
+const ProductsList = ({ page, setPage, changeSideBarStatus, isSideBar }) => {
   const { products, getProducts } = useProducts();
   const { searchInp, setSearchInp } = useProducts();
 
@@ -30,13 +33,13 @@ const ProductsList = ({ page, setPage, changeSideBarStatus }) => {
   }
 
   return (
-    <div>
-      <h3>Products List</h3>
-
-      <button onClick={changeSideBarStatus}>Filter Menu</button>
+    <div style={{ color: "white" }}>
+      <button className="filterBtn" onClick={changeSideBarStatus}>
+        {isSideBar ? <FilterAltOffOutlinedIcon /> : <FilterAltOutlinedIcon />}
+      </button>
 
       {products ? (
-        currentData().map(item => <ProductCard key={item.id} item={item} />)
+        currentData().map((item) => <ProductCard key={item.id} item={item} />)
       ) : (
         <h3>Loading...</h3>
       )}

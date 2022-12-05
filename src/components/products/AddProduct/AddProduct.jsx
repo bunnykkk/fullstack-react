@@ -41,7 +41,7 @@ const AddProduct = () => {
   return (
     <>
       <div className="adminBlock">
-        <h2>Add Product</h2>
+        <h2 style={{ color: "white" }}>Add Product</h2>
         <input
           type="text"
           placeholder="Title"

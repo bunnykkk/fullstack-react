@@ -1,20 +1,22 @@
-.adminBlock {
+.logBlock {
   background-color: rgba(22, 22, 22, 0.878);
-
-  width: 20vmax;
-  height: 25vmax;
+  /* display: flex;
+    flex-direction: column; */
+  width: 18vmax;
+  height: 23vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-content: center;
-  border-radius: 35px;
-  /* opacity: 40%; */
+  border-radius: 20px;
 }
 
-.adminInput {
+.inputLog {
   background-color: rgb(233, 233, 233);
   border-radius: 2vmax;
+  margin-top: 0.7vmax;
+
   border: 0;
   width: 8.4vmax;
   height: 2vmax;
@@ -23,7 +25,7 @@
   box-shadow: 0px 0px 10px rgb(77, 77, 77);
 }
 
-.adminInput:hover {
+.inputLog:hover {
   border: 2px;
   border-color: black;
   transition: 1s;
@@ -31,18 +33,21 @@
   box-shadow: 0px 3px 18px grey;
 }
 
-.btnAdminSave {
+.btnLog {
   box-shadow: 0px 0px 10px rgb(77, 77, 77);
+
   width: 7vmax;
   height: 2vmax;
+  margin-top: 0.7vmax;
   border-radius: 25px;
   border: 0;
   margin-bottom: 1vmax;
 }
 
-.btnAdminSave:hover {
+.btnLog:hover {
   background-color: rgb(211, 211, 211);
   box-shadow: 0px 0px 18px grey;
+
   border: 7px;
   outline-style: solid;
 }

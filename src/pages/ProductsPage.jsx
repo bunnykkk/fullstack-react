@@ -6,7 +6,7 @@ import Footer from "../components/Footer/Footer";
 
 const ProductsPage = () => {
   const [page, setPage] = useState(1);
-  const [isSideBar, setIsSideBar] = useState(true);
+  const [isSideBar, setIsSideBar] = useState(false);
 
   function changeSideBarStatus() {
     setIsSideBar(!isSideBar);
@@ -19,6 +19,7 @@ const ProductsPage = () => {
         page={page}
         setPage={setPage}
         changeSideBarStatus={changeSideBarStatus}
+        isSideBar={isSideBar}
       />
       <Footer />
     </div>
