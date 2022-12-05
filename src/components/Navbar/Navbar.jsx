@@ -23,6 +23,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "../../styles/Navbar.css";
 import "../../styles/Search.css";
 import { useProducts } from "../../contexts/ProductContextProvider";
+import gradi from "../img/gradi.png";
 
 const pages = [
   {
@@ -59,10 +60,10 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
+  const handleOpenUserMenu = event => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -106,6 +107,8 @@ function ResponsiveAppBar() {
       <AppBar id="navbar" position="static" style={{ background: "none" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+            <img src={gradi} alt="hgjgh" className="gradi" />
+
             <img
               className="logo"
               sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
@@ -156,7 +159,7 @@ function ResponsiveAppBar() {
                 sx={{
                   display: { xs: "block", md: "none" },
                 }}>
-                {pages.map((page) => (
+                {pages.map(page => (
                   <MenuItem key={page.type} onClick={handleCloseNavMenu}>
                     <Typography
                       textAlign="center"
@@ -187,7 +190,7 @@ function ResponsiveAppBar() {
             <Box
               className="nav-icons"
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
+              {pages.map(page => (
                 <Button
                   key={page.type}
                   onClick={() => navigate(page.path)}
@@ -219,7 +222,7 @@ function ResponsiveAppBar() {
                   style={{ marginRight: "270px" }}
                   type="text"
                   value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  onChange={e => setSearch(e.target.value)}
                   placeholder="Search..."
                 />
               ) : null}
@@ -244,7 +247,7 @@ function ResponsiveAppBar() {
                   }}
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}>
-                  {settings.map((setting) => (
+                  {settings.map(setting => (
                     <MenuItem key={setting.type} onClick={handleCloseUserMenu}>
                       <Typography
                         textAlign="center"
