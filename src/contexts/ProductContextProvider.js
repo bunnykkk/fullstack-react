@@ -50,13 +50,22 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
 
-  const getProductDetails = async id => {
-    const { data } = await axios(`${JSON_API_PRODUCTS}/${id}`);
+  async function getProductDetails(slug) {
+    const res = await axios.get(`${API}/market/smarts/${slug}/`);
+    console.log(res.data);
     dispatch({
       type: ACTIONS.GET_PRODUCT_DETAILS,
-      payload: data,
+      payload: res.data,
     });
-  };
+  }
+
+  // const getProductDetails = async id => {
+  //   const { data } = await axios(`${JSON_API_PRODUCTS}/${id}`);
+  //   dispatch({
+  //     type: ACTIONS.GET_PRODUCT_DETAILS,
+  //     payload: data,
+  //   });
+  // };
 
   const saveEditedProduct = async newProduct => {
     await axios.patch(`${JSON_API_PRODUCTS}/${newProduct.id}`, newProduct);

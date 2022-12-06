@@ -31,7 +31,7 @@ const ProductCard = ({ item }) => {
               border: "2px solid #f1c40f",
               cursor: "pointer",
             }}
-            onClick={() => navigate(`/details/${item.id}`)}
+            onClick={() => navigate(`/details/${item.slug}`)}
             variant="contained"
             size="small">
             Details
