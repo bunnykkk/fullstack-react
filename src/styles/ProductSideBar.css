@@ -3,7 +3,7 @@
   color: white;
   width: 15vmax;
   height: 90vh;
-  position: fixed;
+  position: absolute;
   border-top-right-radius: 35px;
 }
 
