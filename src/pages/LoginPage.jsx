@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { Navigate, useNavigate } from "react-router-dom";
+import "../styles/Login.css";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -18,23 +19,35 @@ const LoginPage = () => {
 
   return (
     <>
-      <h2>Login User</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "4vmax",
+        }}>
+        <div className="logBlock">
+          <h2 style={{ color: "white" }}>Login User</h2>
+          <input
+            type="text"
+            placeholder="Username"
+            className="inputLog"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={e => setUsername(e.target.value)}
-      />
+          <input
+            type="text"
+            placeholder="Password"
+            className="inputLog"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-      <input
-        type="text"
-        placeholder="Password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-      />
-
-      <button onClick={loginUser}>Login</button>
+          <button className="btnLog" onClick={loginUser}>
+            Login
+          </button>
+        </div>
+      </div>
     </>
   );
 };

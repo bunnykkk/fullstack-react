@@ -1,0 +1,37 @@
+.productCard_main-block {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+
+.productCard_block {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 2%;
+  width: 25vw;
+  height: auto;
+  border-radius: 25px;
+  margin-bottom: 2%;
+  margin: 5%;
+  border: 2px solid violet;
+}
+
+.productCard_img {
+  width: 150px;
+  height: fit-content;
+}
+
+.productCard_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 2%;
+}
+
+.pag {
+  color: white;
+}

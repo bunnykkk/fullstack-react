@@ -1,7 +1,7 @@
-.regBlock {
+.logBlock {
   background-color: rgba(22, 22, 22, 0.878);
-  width: 20vmax;
-  height: 25vmax;
+  width: 18vmax;
+  height: 23vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
   border-radius: 20px;
 }
 
-.inputReg {
+.inputLog {
   background-color: rgb(233, 233, 233);
   border-radius: 2vmax;
   margin-top: 0.7vmax;
@@ -23,7 +23,7 @@
   box-shadow: 0px 0px 10px rgb(77, 77, 77);
 }
 
-.inputReg:hover {
+.inputLog:hover {
   border: 2px;
   border-color: black;
   transition: 1s;
@@ -31,7 +31,7 @@
   box-shadow: 0px 3px 18px grey;
 }
 
-.btnReg {
+.btnLog {
   box-shadow: 0px 0px 10px rgb(77, 77, 77);
 
   width: 7vmax;
@@ -42,7 +42,7 @@
   margin-bottom: 1vmax;
 }
 
-.btnReg:hover {
+.btnLog:hover {
   background-color: rgb(211, 211, 211);
   box-shadow: 0px 0px 18px grey;
 

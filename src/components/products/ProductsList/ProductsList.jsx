@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import ProductCard from "../ProductCard/ProductCard";
 import Pagination from "@mui/material/Pagination";
+import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
+import FilterAltOffOutlinedIcon from "@mui/icons-material/FilterAltOffOutlined";
+import "../../../styles/Filter.css";
 
-const ProductsList = ({ page, setPage, changeSideBarStatus }) => {
+const ProductsList = ({ page, setPage, changeSideBarStatus, isSideBar }) => {
   const { products, getProducts } = useProducts();
   const { searchInp, setSearchInp } = useProducts();
 
@@ -15,7 +18,7 @@ const ProductsList = ({ page, setPage, changeSideBarStatus }) => {
     getProducts();
   }, []);
 
-  const itemsOnPage = 6;
+  const itemsOnPage = 4;
 
   const count = Math.ceil(products.length / itemsOnPage);
 
@@ -30,17 +33,28 @@ const ProductsList = ({ page, setPage, changeSideBarStatus }) => {
   }
 
   return (
-    <div>
-      <h3>Products List</h3>
-
-      <button onClick={changeSideBarStatus}>Filter Menu</button>
+    <div style={{ color: "white" }} className="productList">
+      <button className="filterBtn" onClick={changeSideBarStatus}>
+        {isSideBar ? <FilterAltOffOutlinedIcon /> : <FilterAltOutlinedIcon />}
+      </button>
 
       {products ? (
         currentData().map(item => <ProductCard key={item.id} item={item} />)
       ) : (
         <h3>Loading...</h3>
       )}
-      <Pagination count={count} page={page} onChange={handlePage} />
+      <Pagination
+        color="primary"
+        className="pag"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          color: "red",
+        }}
+        count={count}
+        page={page}
+        onChange={handlePage}
+      />
     </div>
   );
 };

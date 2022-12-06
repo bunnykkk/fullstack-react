@@ -21,9 +21,8 @@ import { useState, useEffect } from "react";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "../../styles/Navbar.css";
-import "../../styles/Search.css";
 import { useProducts } from "../../contexts/ProductContextProvider";
-import gradi from "../img/gradi.png";
+import gradi from "../../components/img/gradi.png";
 
 const pages = [
   {
@@ -107,8 +106,12 @@ function ResponsiveAppBar() {
       <AppBar id="navbar" position="static" style={{ background: "none" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <img src={gradi} alt="hgjgh" className="gradi" />
-
+            <img
+              style={{ pointerEvents: "none" }}
+              src={gradi}
+              alt="fadf"
+              className="gradi"
+            />
             <img
               className="logo"
               sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
@@ -218,14 +221,17 @@ function ResponsiveAppBar() {
             <div style={{ marginLeft: "auto", display: "flex" }}>
               {searchInp ? (
                 <input
-                  className="adminInput"
-                  style={{ marginRight: "270px" }}
+                  className="searchNavbar"
+                  // style={{ marginRight: "270px" }}
                   type="text"
                   value={search}
                   onChange={e => setSearch(e.target.value)}
                   placeholder="Search..."
                 />
               ) : null}
+              {/* seacrh input end */}
+
+              {/* profile start */}
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Account">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -256,13 +262,12 @@ function ResponsiveAppBar() {
                       </Typography>
                     </MenuItem>
                   ))}
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center" onClick={logout}>
-                      Logout
-                    </Typography>
+                  <MenuItem onClick={logout}>
+                    <Typography textAlign="center">Logout</Typography>
                   </MenuItem>
                 </Menu>
               </Box>
+              {/* prodile end */}
             </div>
           </Toolbar>
         </Container>

@@ -1,15 +1,22 @@
 .logo {
-  width: 3%;
+  width: 3vmax;
   margin-right: 20px;
 }
 
+.blockInfoNavbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logoText_Navbar {
+  display: flex;
+  flex-direction: row;
+}
+
 .nav-icons {
-  margin-left: 470px;
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
 }
 
 body {
@@ -23,8 +30,7 @@ body {
 .MuiContainer-root {
   background-color: transparent;
 }
-.adminInput {
-  margin-top: 6px;
+.searchNavbar {
   background-color: rgb(233, 233, 233);
   border-radius: 2vmax;
   border: 0;
@@ -32,4 +38,5 @@ body {
   height: 2vmax;
   transition: 1s;
   padding-left: 20px;
+  margin-right: 1vmax;
 }

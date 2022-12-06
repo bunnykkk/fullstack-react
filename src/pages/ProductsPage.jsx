@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import ProductsList from "../components/products/ProductsList/ProductsList";
 import ProductSideBar from "../components/products/ProductSideBar/ProductSideBar";
 import "../styles/ProductsPage.css";
-import Footer from "../components/Footer/Footer";
 
 const ProductsPage = () => {
   const [page, setPage] = useState(1);
-  const [isSideBar, setIsSideBar] = useState(true);
+  const [isSideBar, setIsSideBar] = useState(false);
 
   function changeSideBarStatus() {
     setIsSideBar(!isSideBar);
@@ -19,8 +18,8 @@ const ProductsPage = () => {
         page={page}
         setPage={setPage}
         changeSideBarStatus={changeSideBarStatus}
+        isSideBar={isSideBar}
       />
-      <Footer />
     </div>
   );
 };

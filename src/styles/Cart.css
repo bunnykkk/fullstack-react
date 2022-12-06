@@ -1,0 +1,61 @@
+.cartBlock {
+  background-color: rgba(22, 22, 22, 0.878);
+  color: white;
+}
+
+.textBlockCart {
+  color: white;
+}
+
+.css-1ndpvdd-MuiTableCell-root {
+  color: white;
+}
+
+.modalStyle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vmax;
+  background-color: rgb(224, 224, 224);
+  border-radius: 50px;
+  box-shadow: 0px 0px 35px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyButton {
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(203, 203, 203);
+  border-radius: 20px;
+  border: 0;
+  transition: 0.6s;
+  margin-top: 1vmax;
+  margin-bottom: 1vmax;
+  box-shadow: 0px 0px 4px grey;
+}
+
+.buyButton:hover {
+  background-color: #222222;
+  border: 2px;
+  transition: 0.6s;
+  color: white;
+  box-shadow: 0px 0px 15px grey;
+}
+
+.btn1 {
+  margin-top: 1vmax;
+  margin-bottom: 1vmax;
+  margin-left: 2vmax !important;
+  color: white !important;
+  width: 10vmax;
+  border-radius: 25px !important;
+}
+
+.btn1:hover {
+  background-color: white !important;
+  color: #222222 !important;
+}

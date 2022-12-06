@@ -1,5 +1,18 @@
 .sideBar {
-  background: gray;
-  width: 20%;
+  background: rgb(22, 22, 22);
+  color: white;
+  width: 15vmax;
   height: 90vh;
+  position: absolute;
+  border-top-right-radius: 35px;
+}
+
+.sideBar.true {
+  left: -350px;
+  transition: 1s;
+}
+
+.sideBar.false {
+  left: 0px;
+  transition: 1s;
 }

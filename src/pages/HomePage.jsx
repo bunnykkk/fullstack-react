@@ -1,8 +1,7 @@
 import React from "react";
-import Footer from "../components/Footer/Footer";
 import "../styles/HomePage.css";
 import "../styles/HomePage.js";
-import phone from "../img/phone.png";
+import phone from "../components/img/phone.png";
 
 const HomePage = () => {
   return (
@@ -26,7 +25,11 @@ const HomePage = () => {
           the market
         </p>
       </div>
-      <button className="rainb_btn">Start Shopping</button>
+      <form action="/products">
+        <button style={{ cursor: "pointer" }} className="rainb_btn">
+          Start Shopping
+        </button>
+      </form>
       <div className="text1">
         <ul className="testUl">
           <li className="li">1M+</li>
@@ -39,8 +42,6 @@ const HomePage = () => {
         <p className="p">Sales</p>
         <p className="p">Credit</p>
       </div>
-
-      <Footer />
     </div>
   );
 };
