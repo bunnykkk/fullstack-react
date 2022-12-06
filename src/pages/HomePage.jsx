@@ -2,12 +2,13 @@ import React from "react";
 import "../styles/HomePage.css";
 import "../styles/HomePage.js";
 import phone from "../components/img/phone.png";
+import gradi2 from "../components/img/gradi2.png";
 
 const HomePage = () => {
   return (
     <div>
       <img src={phone} alt="vghhh" className="phone" />
-
+      <img src={gradi2} alt="jhk" className="gardi2" />
       <h2 id="home-text">
         Buy your dream
         <div className="mask">
