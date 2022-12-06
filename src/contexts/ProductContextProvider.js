@@ -24,44 +24,43 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductContextProvider = ({ children }) => {
   const [searchInp, setSearchInp] = useState(false);
-  const API = "http://204.236.250.233/market/smarts/";
+  const API = "http://204.236.250.233";
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const navigate = useNavigate();
 
   const location = useLocation();
 
-  const getProducts = async formData => {
-    const { data } = await axios.get(`${API}/market/smarts/`, formData);
-    console.log(data);
+  async function getProducts() {
+    const res = await axios.get(`${API}/market/smarts/`);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
-      payload: data.results,
+      payload: res.data,
     });
-  };
+  }
 
-  const addProduct = async newProduct => {
-    await axios.post(JSON_API_PRODUCTS, newProduct);
-    getProducts();
-  };
-
-  const deleteProduct = async id => {
-    await axios.delete(`${JSON_API_PRODUCTS}/${id}`);
-    getProducts();
-  };
-
-  const getProductDetails = async id => {
-    const { data } = await axios(`${JSON_API_PRODUCTS}/${id}`);
+  async function getProductDetails(slug) {
+    const res = await axios.get(`${API}/market/smarts/${slug}/`);
     dispatch({
       type: ACTIONS.GET_PRODUCT_DETAILS,
-      payload: data,
+      payload: res.data,
     });
-  };
+  }
 
-  const saveEditedProduct = async newProduct => {
-    await axios.patch(`${JSON_API_PRODUCTS}/${newProduct.id}`, newProduct);
+  async function saveEditedProduct(slug) {
+    const res = await axios.patch(`${API}/market/smarts/${slug}/`);
+    getProducts();
+  }
+
+  const addProduct = async newProduct => {
+    await axios.post(`${API}/market/smarts/`, newProduct);
     getProducts();
   };
+
+  async function deleteProduct(slug) {
+    const res = await axios.delete(`${API}/market/smarts/${slug}/`);
+    getProducts();
+  }
 
   const fetchByParams = (query, value) => {
     const search = new URLSearchParams(location.search);

@@ -5,7 +5,7 @@ import "../styles/ProductsPage.css";
 
 const ProductsPage = () => {
   const [page, setPage] = useState(1);
-  const [isSideBar, setIsSideBar] = useState(false);
+  const [isSideBar, setIsSideBar] = useState(true);
 
   function changeSideBarStatus() {
     setIsSideBar(!isSideBar);

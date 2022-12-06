@@ -144,16 +144,7 @@ export default function Cart() {
             <div>
               <TextField
                 id="standard-search"
-                label="Email@adress"
-                type="email"
-                variant="standard"
-                style={{ width: "20rem" }}
-              />
-            </div>
-            <div>
-              <TextField
-                id="standard-search"
-                label="Address street 1"
+                label="Address street/home/room"
                 type="search"
                 variant="standard"
                 style={{ width: "20rem" }}
@@ -162,59 +153,10 @@ export default function Cart() {
             <div>
               <TextField
                 id="standard-search"
-                label="Address street 2"
-                type="address"
-                variant="standard"
-                style={{ width: "20rem" }}
-              />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                width: "20rem",
-              }}>
-              <TextField
-                id="standard-search"
-                label="City*"
-                type="search"
-                variant="standard"
-              />
-              <TextField
-                id="standard-search"
-                label="Region"
-                type="search"
-                variant="standard"
-              />
-            </div>
-            <div>
-              <TextField
-                id="standard-search"
                 label="Add card number"
                 type="email"
                 variant="standard"
                 style={{ width: "20rem" }}
-              />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                width: "20rem",
-              }}>
-              <TextField
-                id="standard-search"
-                label="CVV"
-                type="search"
-                variant="standard"
-              />
-              <TextField
-                id="standard-search"
-                label="Month Date"
-                type="number"
-                variant="standard"
               />
             </div>
             <button

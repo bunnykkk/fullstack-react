@@ -24,21 +24,16 @@ const ProductCard = ({ item }) => {
 
         <div className="productCard_buttons">
           <button
-            style={{
-              fontWeight: "bold",
-              backgroundColor: "rgb(25, 25, 25)",
-              color: "#f1c40f",
-              border: "2px solid #f1c40f",
-              cursor: "pointer",
-            }}
-            onClick={() => navigate(`/details/${item.id}`)}
+            className="btnDet"
+            onClick={() => navigate(`/details/${item.slug}`)}
             variant="contained"
             size="small">
             Details
           </button>
           <Fab
+            className=""
             size="small"
-            onClick={() => navigate(`/edit/${item.id}`)}
+            onClick={() => navigate(`/edit/${item.slug}`)}
             variant="outlined"
             aria-label="edit">
             <EditIcon />
@@ -46,16 +41,20 @@ const ProductCard = ({ item }) => {
           <IconButton
             onClick={() => deleteProduct(item.id)}
             variant="outlined"
-            color="primary"
-            size="small"
-            aria-label="delete">
-            <DeleteIcon />
-          </IconButton>
-          <IconButton size="small" onClick={() => addProductToCart(item)}>
+            aria-label="">
             <AddShoppingCartOutlinedIcon
+              style={{ color: "black" }}
               color={checkProductInCart(item.id) ? "primary" : ""}
             />
           </IconButton>
+          <Fab
+            className=""
+            size="small"
+            onClick={() => navigate(`/edit/${item.id}`)}
+            variant="outlined"
+            aria-label="delete">
+            <DeleteIcon />
+          </Fab>
         </div>
       </div>
     </div>
