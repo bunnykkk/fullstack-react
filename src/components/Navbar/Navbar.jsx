@@ -23,7 +23,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "../../styles/Navbar.css";
 import "../../styles/Search.css";
 import { useProducts } from "../../contexts/ProductContextProvider";
-import gradi from "../img/gradi.png";
+import gradi from "../../components/img/gradi.png";
 
 const pages = [
   {
@@ -107,6 +107,12 @@ function ResponsiveAppBar() {
       <AppBar id="navbar" position="static" style={{ background: "none" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+            <img
+              style={{ pointerEvents: "none" }}
+              src={gradi}
+              alt="fadf"
+              className="gradi"
+            />
             <img
               className="logo"
               sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}

@@ -39,3 +39,6 @@
   transition: 0.6s;
   text-shadow: 0px 0px 5px gray;
 }
+.productList {
+  display: flex;
+}
