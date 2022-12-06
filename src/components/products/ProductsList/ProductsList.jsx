@@ -19,29 +19,30 @@ const ProductsList = ({ page, setPage, changeSideBarStatus, isSideBar }) => {
   }, []);
 
   return (
-    <div style={{ color: "white" }} className="productList">
+    <>
       <button className="filterBtn" onClick={changeSideBarStatus}>
         {isSideBar ? <FilterAltOffOutlinedIcon /> : <FilterAltOutlinedIcon />}
       </button>
-
-      {products ? (
-        products.map(item => <ProductCard key={item.id} item={item} />)
-      ) : (
-        <h3>Loading...</h3>
-      )}
-      {/* <Pagination
-        color="primary"
-        className="pag"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          color: "red",
-        }}
-        count={count}
-        page={page}
-        onChange={handlePage}
-      /> */}
-    </div>
+      <div style={{ color: "white" }} className="productList">
+        {products ? (
+          products.map((item) => <ProductCard key={item.id} item={item} />)
+        ) : (
+          <h3>Loading...</h3>
+        )}
+        {/* <Pagination
+    color="primary"
+    className="pag"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      color: "red",
+    }}
+    count={count}
+    page={page}
+    onChange={handlePage}
+  /> */}
+      </div>
+    </>
   );
 };
 

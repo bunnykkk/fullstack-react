@@ -7,8 +7,6 @@ import CartContextProvider from "./contexts/CartContextProvider";
 import Footer from "./components/Footer/Footer";
 
 const App = () => {
-  const API = "http://204.236.250.233";
-
   return (
     <>
       <CartContextProvider>
@@ -16,7 +14,6 @@ const App = () => {
           <AuthContextProvider>
             <Navbar />
             <MainRoutes />
-            {}
             <Footer />
           </AuthContextProvider>
         </ProductContextProvider>
