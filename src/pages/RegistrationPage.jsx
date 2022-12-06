@@ -24,7 +24,7 @@ const RegistrationPage = () => {
     formData.append("password", password);
     formData.append("password_confirm", passwordConfirm);
     formData.append("email", email);
-    register(formData, navigate);
+    register(formData, navigate("/login"));
   }
 
   return (
