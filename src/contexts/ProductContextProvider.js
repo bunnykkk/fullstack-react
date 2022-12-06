@@ -24,21 +24,21 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductContextProvider = ({ children }) => {
   const [searchInp, setSearchInp] = useState(false);
-  const API = "http://204.236.250.233/market/smarts/";
+  const API = "http://204.236.250.233";
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const navigate = useNavigate();
 
   const location = useLocation();
 
-  const getProducts = async formData => {
-    const { data } = await axios.get(`${API}/market/smarts/`, formData);
-    console.log(data);
+  async function getProducts() {
+    const res = await axios.get(`${API}/market/smarts/`);
+    console.log(res.data);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
-      payload: data.results,
+      payload: res.data,
     });
-  };
+  }
 
   const addProduct = async newProduct => {
     await axios.post(JSON_API_PRODUCTS, newProduct);
