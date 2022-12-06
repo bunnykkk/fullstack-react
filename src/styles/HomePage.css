@@ -160,3 +160,10 @@ body {
 #home-text {
   font-family: "Quicksand", sans-serif;
 }
+.gardi2 {
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  width: 60%;
+  transform: scale(-1, 1);
+}
