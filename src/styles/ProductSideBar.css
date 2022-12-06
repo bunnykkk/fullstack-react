@@ -3,7 +3,7 @@
   color: white;
   width: 15vmax;
   height: 90vh;
-  position: absolute;
+  position: fixed;
   border-top-right-radius: 35px;
 }
 
@@ -16,11 +16,3 @@
   left: 0px;
   transition: 1s;
 }
-/* .sideBar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 1.4rem;
-  color: #fff;
-  display: block;
-  transition: 0.3s;
-} */

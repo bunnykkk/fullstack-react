@@ -21,7 +21,6 @@ import { useState, useEffect } from "react";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "../../styles/Navbar.css";
-import "../../styles/Search.css";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import gradi from "../../components/img/gradi.png";
 
@@ -85,16 +84,16 @@ function ResponsiveAppBar() {
   //   setProducts([...data]);
   // }
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q") || "");
-  useEffect(() => {
-    setSearchParams({
-      q: search,
-    });
-  }, [search]);
-  const iiiip = useEffect(() => {
-    // render();
-  }, [searchParams]);
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const [search, setSearch] = useState(searchParams.get("q") || "");
+  // useEffect(() => {
+  //   setSearchParams({
+  //     q: search,
+  //   });
+  // }, [search]);
+  // const iiiip = useEffect(() => {
+  //   // render();
+  // }, [searchParams]);
 
   React.useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -225,8 +224,8 @@ function ResponsiveAppBar() {
                   className="searchNavbar"
                   // style={{ marginRight: "270px" }}
                   type="text"
-                  value={search}
-                  onChange={e => setSearch(e.target.value)}
+                  // value={search}
+                  // onChange={e => setSearch(e.target.value)}
                   placeholder="Search..."
                 />
               ) : null}
