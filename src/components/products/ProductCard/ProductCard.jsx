@@ -38,13 +38,13 @@ const ProductCard = ({ item }) => {
           </button>
           <Fab
             size="small"
-            onClick={() => navigate(`/edit/${item.id}`)}
+            onClick={() => navigate(`/edit/${item.slug}`)}
             variant="outlined"
             aria-label="edit">
             <EditIcon />
           </Fab>
           <IconButton
-            onClick={() => deleteProduct(item.id)}
+            onClick={() => deleteProduct(item.slug)}
             variant="outlined"
             color="primary"
             size="small"

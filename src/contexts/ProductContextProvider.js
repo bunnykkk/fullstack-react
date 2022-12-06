@@ -33,44 +33,34 @@ const ProductContextProvider = ({ children }) => {
 
   async function getProducts() {
     const res = await axios.get(`${API}/market/smarts/`);
-    console.log(res.data);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: res.data,
     });
   }
 
-  const addProduct = async newProduct => {
-    await axios.post(JSON_API_PRODUCTS, newProduct);
-    getProducts();
-  };
-
-  const deleteProduct = async id => {
-    await axios.delete(`${JSON_API_PRODUCTS}/${id}`);
-    getProducts();
-  };
-
   async function getProductDetails(slug) {
     const res = await axios.get(`${API}/market/smarts/${slug}/`);
-    console.log(res.data);
     dispatch({
       type: ACTIONS.GET_PRODUCT_DETAILS,
       payload: res.data,
     });
   }
 
-  // const getProductDetails = async id => {
-  //   const { data } = await axios(`${JSON_API_PRODUCTS}/${id}`);
-  //   dispatch({
-  //     type: ACTIONS.GET_PRODUCT_DETAILS,
-  //     payload: data,
-  //   });
-  // };
+  async function saveEditedProduct(slug) {
+    const res = await axios.patch(`${API}/market/smarts/${slug}/`);
+    getProducts();
+  }
 
-  const saveEditedProduct = async newProduct => {
-    await axios.patch(`${JSON_API_PRODUCTS}/${newProduct.id}`, newProduct);
+  const addProduct = async newProduct => {
+    await axios.post(`${API}/market/smarts/`, newProduct);
     getProducts();
   };
+
+  async function deleteProduct(slug) {
+    const res = await axios.delete(`${API}/market/smarts/${slug}/`);
+    getProducts();
+  }
 
   const fetchByParams = (query, value) => {
     const search = new URLSearchParams(location.search);

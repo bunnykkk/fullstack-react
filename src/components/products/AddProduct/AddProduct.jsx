@@ -15,15 +15,20 @@ const AddProduct = () => {
   const { addProduct } = useProducts();
 
   const [product, setProduct] = useState({
-    name: "",
+    title: "",
     description: "",
     price: "",
+    quantity: "",
+    color: "",
+    ram: "",
+    sim: "",
+    parametr: "",
     picture: "",
     type: "",
   });
 
-  const handleInp = (e) => {
-    if (e.target.name === "price") {
+  const handleInp = e => {
+    if (e.target.title === "price") {
       let obj = {
         ...product,
         price: Number(e.target.value),
@@ -32,7 +37,7 @@ const AddProduct = () => {
     } else {
       let obj = {
         ...product,
-        [e.target.name]: e.target.value,
+        [e.target.title]: e.target.value,
       };
       setProduct(obj);
     }
@@ -45,7 +50,7 @@ const AddProduct = () => {
         <input
           type="text"
           placeholder="Title"
-          name="name"
+          name="title"
           className="adminInput"
           onChange={handleInp}
         />
@@ -62,6 +67,46 @@ const AddProduct = () => {
           type="number"
           placeholder="Price"
           name="price"
+          className="adminInput"
+          onChange={handleInp}
+        />
+        <br />
+        <input
+          type="number"
+          placeholder="Quantity"
+          name="quantity"
+          className="adminInput"
+          onChange={handleInp}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Color"
+          name="color"
+          className="adminInput"
+          onChange={handleInp}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Ram"
+          name="ram"
+          className="adminInput"
+          onChange={handleInp}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Sim"
+          name="sim"
+          className="adminInput"
+          onChange={handleInp}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Parametr"
+          name="parametr"
           className="adminInput"
           onChange={handleInp}
         />
