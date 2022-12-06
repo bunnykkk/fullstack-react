@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer/Footer";
 import "../styles/HomePage.css";
 import "../styles/HomePage.js";
 import phone from "../components/img/phone.png";
@@ -43,8 +42,6 @@ const HomePage = () => {
         <p className="p">Sales</p>
         <p className="p">Credit</p>
       </div>
-
-      <Footer />
     </div>
   );
 };

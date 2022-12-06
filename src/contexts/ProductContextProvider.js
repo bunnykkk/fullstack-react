@@ -32,7 +32,8 @@ const ProductContextProvider = ({ children }) => {
   const location = useLocation();
 
   const getProducts = async formData => {
-    const { data } = await axios.get(`${API}?page=2`, formData);
+    const { data } = await axios.get(`${API}/market/smarts/`, formData);
+    console.log(data);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: data.results,

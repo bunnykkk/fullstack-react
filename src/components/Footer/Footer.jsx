@@ -32,7 +32,7 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <p>&copy;2022 CORSA™ | All Rights Reserved</p>
+        <p>&copy;2022 APARAT™ | All Rights Reserved</p>
       </footer>
     </>
   );

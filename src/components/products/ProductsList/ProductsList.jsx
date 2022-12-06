@@ -43,7 +43,18 @@ const ProductsList = ({ page, setPage, changeSideBarStatus, isSideBar }) => {
       ) : (
         <h3>Loading...</h3>
       )}
-      <Pagination count={count} page={page} onChange={handlePage} />
+      <Pagination
+        color="primary"
+        className="pag"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          color: "red",
+        }}
+        count={count}
+        page={page}
+        onChange={handlePage}
+      />
     </div>
   );
 };

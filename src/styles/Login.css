@@ -1,7 +1,5 @@
 .logBlock {
   background-color: rgba(22, 22, 22, 0.878);
-  /* display: flex;
-    flex-direction: column; */
   width: 18vmax;
   height: 23vmax;
   display: flex;
