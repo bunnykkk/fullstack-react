@@ -6,7 +6,7 @@
 
 .productCard_block {
   display: flex;
-  background-color: white;
+  background-color: rgba(255, 255, 255);
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
@@ -30,7 +30,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 80%;
+  width: 90%;
   margin-bottom: 2%;
 }
 
