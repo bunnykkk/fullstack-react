@@ -44,6 +44,7 @@ const ProductCard = ({ item }) => {
             aria-label="">
             <AddShoppingCartOutlinedIcon
               style={{ color: "black" }}
+              onClick={() => addProductToCart(item)}
               color={checkProductInCart(item.id) ? "primary" : ""}
             />
           </IconButton>
