@@ -69,28 +69,37 @@ export default function Cart() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {cart?.products.map((row) => (
+            {cart?.products.map(row => (
               <TableRow
                 key={row.item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell>
-                  <img src={row.item.picture} alt="" width="50" />
+                  <img src={row.item.image} alt="" width="50" />
                 </TableCell>
-                <TableCell align="center">{row.item.name}</TableCell>
+                <TableCell style={{ color: "white" }} align="center">
+                  {row.item.title}
+                </TableCell>
                 <TableCell align="center">{row.item.type}</TableCell>
-                <TableCell align="center">{row.item.price}</TableCell>
+                <TableCell style={{ color: "white" }} align="center">
+                  {row.item.price}
+                </TableCell>
                 <TableCell align="center">
                   <TextField
+                    style={{ backgroundColor: "white" }}
                     type="number"
                     value={row.count}
-                    onChange={(e) =>
+                    onChange={e =>
                       changeProductCount(e.target.value, row.item.id)
                     }
                   />
                 </TableCell>
-                <TableCell align="center">{row.subPrice}</TableCell>
+                <TableCell style={{ color: "white" }} align="center">
+                  {row.subPrice}
+                </TableCell>
                 <TableCell align="center">
-                  <button onClick={() => deleteProductInCart(row.item.id)}>
+                  <button
+                    className="buyButton btn1"
+                    onClick={() => deleteProductInCart(row.item.id)}>
                     Delete From Cart
                   </button>
                 </TableCell>
