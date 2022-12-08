@@ -24,7 +24,7 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductContextProvider = ({ children }) => {
   const [searchInp, setSearchInp] = useState(false);
-  const API = "http://204.236.250.233";
+  const API = "http://34.239.103.140";
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const navigate = useNavigate();

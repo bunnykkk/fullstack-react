@@ -40,96 +40,116 @@ const EditProduct = () => {
     <>
       {product ? (
         <>
-          <h2>Add Product</h2>
-
-          <input
-            type="text"
-            value={product.title}
-            placeholder="Title"
-            name="name"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.description}
-            placeholder="Description"
-            name="description"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.in_stock}
-            placeholder="Description"
-            name="description"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.parametr}
-            placeholder="Description"
-            name="description"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.quantity}
-            placeholder="Description"
-            name="description"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.ram}
-            placeholder="Description"
-            name="description"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.sim}
-            placeholder="Description"
-            name="description"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="number"
-            value={product.price}
-            placeholder="Price"
-            name="price"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.image}
-            placeholder="Picture"
-            name="picture"
-            onChange={handleInp}
-          />
-          <br />
-          <input
-            type="text"
-            value={product.category}
-            placeholder="Type"
-            name="type"
-            onChange={handleInp}
-          />
-          <br />
-
-          <button
-            onClick={() => {
-              saveEditedProduct(product);
-              navigate("/products");
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "4vmax",
             }}>
-            Save Changes
-          </button>
+            <div className="adminBlock">
+              <h2 style={{ color: "white" }}>Edit Product</h2>
+
+              <input
+                type="text"
+                className="adminInput"
+                value={product.title}
+                placeholder="Title"
+                name="name"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.description}
+                placeholder="Description"
+                name="description"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.in_stock}
+                placeholder="Description"
+                name="description"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.parametr}
+                placeholder="Description"
+                name="description"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.quantity}
+                placeholder="Description"
+                name="description"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.ram}
+                placeholder="Description"
+                name="description"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.sim}
+                placeholder="Description"
+                name="description"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="number"
+                className="adminInput"
+                value={product.price}
+                placeholder="Price"
+                name="price"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.image}
+                placeholder="Picture"
+                name="picture"
+                onChange={handleInp}
+              />
+              <br />
+              <input
+                type="text"
+                className="adminInput"
+                value={product.category}
+                placeholder="Type"
+                name="type"
+                onChange={handleInp}
+              />
+              <br />
+
+              <button
+                className="btnAdminSave"
+                onClick={() => {
+                  saveEditedProduct(product);
+                  navigate("/products");
+                }}>
+                Save Changes
+              </button>
+            </div>
+          </div>
         </>
       ) : (
         <h3>Loading...</h3>
